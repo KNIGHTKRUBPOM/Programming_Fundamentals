@@ -1,0 +1,941 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/KNIGHTKRUBPOM/Programming_Fundamentals/blob/main/LAB_3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Exercise 3\n",
+        "\n",
+        "3.1 จากข้อมูลใน List ให้หาผลบวกเฉพาะตัวเลขคู่ โดยใช้ While Loop\n",
+        "\n",
+        "list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13]\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "8LZVzcOUVMor"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2cTrxjMXUE2n",
+        "outputId": "05e16767-67a4-4bdd-f172-c74639165f77",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "20\n"
+          ]
+        }
+      ],
+      "source": [
+        "list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13]\n",
+        "sum = 0\n",
+        "count = 0\n",
+        "while count < len(list1) :\n",
+        "  if list1[count] % 2 == 0 :\n",
+        "    sum += list1[count]\n",
+        "  count += 1\n",
+        "print(sum)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.2 จากข้อมูลใน List ให้หาตัวเลขที่มีค่ามากที่สุดเป็นอันดับ 2 ใน List โดยใช้ While Loop\n",
+        "\n",
+        "list = [-5, 7, 10, 1, 2, 5, 8, 100]\n"
+      ],
+      "metadata": {
+        "id": "uPvbrsO_Vimb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lst = [-5, 7, 10, 1, 2, 5, 8, 100]\n",
+        "max_value = lst[0]\n",
+        "second_value = lst[0]\n",
+        "count = 0\n",
+        "while count < len(lst):\n",
+        "  if lst[count] > max_value:\n",
+        "    max_value = lst[count]\n",
+        "  count += 1\n",
+        "count = 0\n",
+        "lst.remove(max_value)\n",
+        "while count < len(lst):\n",
+        "  if lst[count] > second_value:\n",
+        "    second_value = lst[count]\n",
+        "  count += 1\n",
+        "print(second_value)"
+      ],
+      "metadata": {
+        "id": "iUeJ91zfVr1Z",
+        "outputId": "9bf3d12f-febc-4aac-aeef-4d6811415523",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.3 เขียนโปรแกรมรับค่า n แล้วคำนวณค่าต่อไปนี้\n",
+        "\n",
+        "$1/1^2 + 1/2^2 + 1/3^2 + 1/4^2 + 1/5^2 + … +  1/n^2$\n"
+      ],
+      "metadata": {
+        "id": "udBZzWe9VsU7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "n = int(input(\"n : \"))\n",
+        "sum = 0\n",
+        "for i in range(1,n+1):\n",
+        "  sum = sum + (1  / ( i**2 ))\n",
+        "print(sum)"
+      ],
+      "metadata": {
+        "id": "xtBw7zuxWEZ4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af5a2911-a681-4e77-96ea-8e3686b43594"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "n : 3\n",
+            "1.3611111111111112\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.4 จากข้อมูลใน List ให้ตรวจสอบว่า ข้อมูลในลิสต์ s เรียงลำดับจากน้อยไปมากหรือไม่ ตอบเป็น True, False\n",
+        "\n",
+        "\t[1,2,3,4,5], [5,4,3,2,1]\n"
+      ],
+      "metadata": {
+        "id": "o-6AnE5zWFJJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers1 = [1,2,3,4,5]\n",
+        "numbers2 = [5,4,3,2,1]\n",
+        "logic1 = True\n",
+        "logic2 = True\n",
+        "for i in range(len(numbers1) - 1):\n",
+        "    if numbers1[i] > numbers1[i + 1]:\n",
+        "        logic1 = False\n",
+        "        break\n",
+        "    else:\n",
+        "      logic1 = True\n",
+        "for j in range(len(numbers2) - 1):\n",
+        "    if numbers2[i] < numbers2[i + 1]:\n",
+        "        logic2 = True\n",
+        "        break\n",
+        "    else:\n",
+        "      logic2 = False\n",
+        "print(logic1,\"and\",logic2)"
+      ],
+      "metadata": {
+        "id": "LYG2sGGgWNei",
+        "outputId": "a2a2f469-667c-4394-d756-94f38a9d616a",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True and False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.5  ให้ x เป็นลิสต์เก็บคะแนน ต้องการปรับช่องที่มีค่าน้อยกว่า 30 ให้มีค่าเพิ่มอีก 10% แสดงผลลัพธ์ เป็น List\n",
+        "\n",
+        "\tx = [60, 70, 72, 65, 55, 43, 20, 90, 12]\n"
+      ],
+      "metadata": {
+        "id": "Hv-fE32hWOBd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = [60, 70, 72, 65, 55, 43, 20, 90, 12]\n",
+        "for i in range(len(x)):\n",
+        "  if x[i] < 30:\n",
+        "    x[i] = int(x[i] * 1.10)\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "id": "BSFOJ_8GWTtL",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8bb3a722-861a-474b-84ee-242d0bf1e6fa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[60, 70, 72, 65, 55, 43, 22, 90, 13]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.6 ต้องการหาผลรวมของคะแนนที่เก็บในลิสต์ x โดยขอไม่รวมคะแนนที่น้อยสุดอันดับ 2\n",
+        "\n",
+        "\tx = [15, 80, 75, 62, 55, 43, 99, 67, 10]\n"
+      ],
+      "metadata": {
+        "id": "IDw88nQbWUTw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = [15, 80, 75, 62, 55, 43, 99, 67, 10]\n",
+        "min = x[0]\n",
+        "\n",
+        "sum = 0\n",
+        "for i in x:\n",
+        "  if i < min:\n",
+        "    min = i\n",
+        "\n",
+        "x.remove(min)\n",
+        "less = x[0]\n",
+        "for i in x:\n",
+        "  if i < less:\n",
+        "    less = i\n",
+        "x.remove(less)\n",
+        "x.append(min)\n",
+        "for i in x:\n",
+        "  sum += i\n",
+        "print(sum)\n"
+      ],
+      "metadata": {
+        "id": "Aool1F22WZKI",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5cadfe8e-1cc6-4866-8696-9873d1703e5a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "453\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.7 จากข้อมูลใน List ให้แสดง string ที่มีความยาวมากกว่า 2 และมีอักษรตัวแรกกับตัวสุดท้ายเหมือนกัน แสดงบรรทัดละ 1 ตัว\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\tlst = ['abba', 'a', 'aa', 'alcaza', 'python', 'stores', 'program', 'execute']\n"
+      ],
+      "metadata": {
+        "id": "92oZ0IQdWZkF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lst = ['abba', 'a', 'aa', 'alcaza', 'python', 'stores', 'program', 'execute']\n",
+        "for i in lst:\n",
+        "  if len(i) > 2 and i[0] == i[-1]:\n",
+        "    print(i)\n"
+      ],
+      "metadata": {
+        "id": "i3vr0x1vWiHH",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "aaad2458-2958-4419-ca3a-892c99fbaf81"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "abba\n",
+            "alcaza\n",
+            "stores\n",
+            "execute\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.8 จากข้อมูลใน List ให้ลบข้อมูลที่มีซ้ำกันให้เหลือเพียงตัวเดียว ให้แสดงผลเป็น list เช่น\n",
+        "\n",
+        "[‘a’,’a’] => [‘a’]\n",
+        "\n",
+        "lst = ['a', 'a', 'b', 'a', 'b', 'c', 'd']\n"
+      ],
+      "metadata": {
+        "id": "QicYHZbcWi8U"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lst = ['a', 'a', 'b', 'a', 'b', 'c', 'd']\n",
+        "new_lst = []\n",
+        "for i in lst:\n",
+        "  if i not in new_lst:\n",
+        "    new_lst += i\n",
+        "print(new_lst)"
+      ],
+      "metadata": {
+        "id": "saXxuMceWzd2",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cc895f85-001c-4812-a93f-809ad59c354f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['a', 'b', 'c', 'd']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.9 จากข้อมูลใน List ให้แสดงว่าแต่ละข้อมูลใน List มีจำนวนเท่าไร คือ มีซ้ำกันกี่ตัวใน List  ให้แสดงบรรทัดละตัว เช่น\n",
+        "\n",
+        "\t[1, 2, 3, 4, 1, 2, 3, 1, 2, 1]\n",
+        "\t1 = 4\n",
+        "\t2 = 3\n",
+        "\t3 = 2\n",
+        "\t4 = 1\n",
+        "  \n",
+        "\tlst = [1,2,3,4,5,1,2,3,4,1,2,3,1,2,1]"
+      ],
+      "metadata": {
+        "id": "Dl6OEM9nWz8s"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lst = [1,2,3,4,5,1,2,3,4,1,2,3,1,2,1]\n",
+        "new_lst = []\n",
+        "num = []\n",
+        "for i in lst:\n",
+        "  if i not in new_lst:\n",
+        "    new_lst.append(i)\n",
+        "count = 0\n",
+        "for i in new_lst:\n",
+        "  for j in range(len(lst)):\n",
+        "    if i == lst[j]:\n",
+        "      count += 1\n",
+        "  num.append(count)\n",
+        "  count = 0\n",
+        "for i in range(len(new_lst)):\n",
+        "  print(f\"{new_lst[i]} = {num[i]}\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "Dm0dAivtW7vQ",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b702daf5-f2fc-4cb7-9224-0aebbd3dbb3d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 = 5\n",
+            "2 = 4\n",
+            "3 = 3\n",
+            "4 = 2\n",
+            "5 = 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1.\tเขียนโปรแกรมเพื่อหาผลบวกของอนุกรม 5+10+15+20+… จนถึง n เมื่อ n เป็นตัวเลขที่รับเข้ามาทางคีย์บอร์ด"
+      ],
+      "metadata": {
+        "id": "GgbgWOV6W8Nn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "n = int(input(\"n : \"))\n",
+        "sum = 0\n",
+        "for i in range(5,n,5):\n",
+        "  sum += i\n",
+        "print(sum)"
+      ],
+      "metadata": {
+        "id": "9cCHZsLhXGKm",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1027f099-3ced-42a2-af8e-325567f6944d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "n : 30\n",
+            "75\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.\tจงเขียนโปรแกรมที่จะหาตัวเลขระหว่าง 2000-3200 ที่หารด้วย 7 ลงตัว แต่หารด้วย 5 ไม่ลงตัว\n",
+        "การแสดงผลให้แสดงตัวเลขและคั่นด้วยเครื่องหมาย , ในบรรทัดเดียว\n",
+        "\n",
+        "2002,2009,2016,2023,2037,2044,2051,2058,2072,2079,2086,2093,2107,2114,2121,2128,2142,2149,2156,2163,2177,2184,2191,2198,2212,2219,2226,2233,2247,2254,2261,2268,2282,2289,2296,2303,2317,2324,2331,2338,2352,2359,2366,2373,2387,2394,2401,2408,2422,2429,2436,2443,2457,2464,2471,2478,2492,2499,2506,2513,2527,2534,2541,2548,2562,2569,2576,2583,2597,2604,2611,2618,2632,2639,2646,2653,2667,2674,2681,2688,2702,2709,2716,2723,2737,2744,2751,2758,2772,2779,2786,2793,2807,2814,2821,2828,2842,2849,2856,2863,2877,2884,2891,2898,2912,2919,2926,2933,2947,2954,2961,2968,2982,2989,2996,3003,3017,3024,3031,3038,3052,3059,3066,3073,3087,3094,3101,3108,3122,3129,3136,3143,3157,3164,3171,3178,3192,3199,"
+      ],
+      "metadata": {
+        "id": "aujapFNTXGsV"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "y1z92PNTz2Je"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(2000,3201):\n",
+        "  if i % 7 == 0 and i % 5 != 0:\n",
+        "    print(i,end=\",\")"
+      ],
+      "metadata": {
+        "id": "L-kIF3-nXJqR",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "f4c1d9c3-2af2-4e50-db70-8360b198b705"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2002,2009,2016,2023,2037,2044,2051,2058,2072,2079,2086,2093,2107,2114,2121,2128,2142,2149,2156,2163,2177,2184,2191,2198,2212,2219,2226,2233,2247,2254,2261,2268,2282,2289,2296,2303,2317,2324,2331,2338,2352,2359,2366,2373,2387,2394,2401,2408,2422,2429,2436,2443,2457,2464,2471,2478,2492,2499,2506,2513,2527,2534,2541,2548,2562,2569,2576,2583,2597,2604,2611,2618,2632,2639,2646,2653,2667,2674,2681,2688,2702,2709,2716,2723,2737,2744,2751,2758,2772,2779,2786,2793,2807,2814,2821,2828,2842,2849,2856,2863,2877,2884,2891,2898,2912,2919,2926,2933,2947,2954,2961,2968,2982,2989,2996,3003,3017,3024,3031,3038,3052,3059,3066,3073,3087,3094,3101,3108,3122,3129,3136,3143,3157,3164,3171,3178,3192,3199,"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.\tจากข้อมูลใน List ต้องการนับว่า\n",
+        "มีข้อมูลกี่คู่ในลิสต์ที่ตัวทางซ้ายมีค่ามากกว่าตัวทางขวา (ไม่จำเป็นต้องอยู่ติดกัน)\n",
+        "\n",
+        "x = [1, 5, 4, 2, 1]"
+      ],
+      "metadata": {
+        "id": "FCZpmtuFXKUl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = []\n",
+        "num = len(x)\n",
+        "count = 0\n",
+        "for i in range(num):\n",
+        "  for j in range(i,num):\n",
+        "    # print(x[i],\"and\",x[j])\n",
+        "    if x[i] > x[j]:\n",
+        "      count += 1\n",
+        "print(count)\n"
+      ],
+      "metadata": {
+        "id": "VBgfWEXuXjQH",
+        "outputId": "c2b28782-d400-42d9-9c5b-a20807b312c5",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4.\tให้ตรวจสอบว่า String ที่รับเข้ามาผ่านคีย์บอร์ด เป็นตัวอักษรพิมพ์เล็ก หรือตัวอักษรพิมพ์ใหญ่ อย่างละกี่ตัว ตอบ 2 บรรทัด พิมพ์เล็ก 1 บรรทัด พิมพ์ใหญ่ 1 บรรทัด\n",
+        "\n",
+        "klfjslkgD;FGK;LSDKdl;gfk; => 18,3"
+      ],
+      "metadata": {
+        "id": "UAEC1_jdXjya"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "word = \"klfjslkgD;FGK;LSDKdl;gfk;\"\n",
+        "low_word = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']\n",
+        "upper_word = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']\n",
+        "count_low = 0\n",
+        "count_upper = 0\n",
+        "for i in word:\n",
+        "  for j in low_word:\n",
+        "    if i == j:\n",
+        "      count_low += 1\n",
+        "for i in word:\n",
+        "  for j in upper_word:\n",
+        "    if i == j:\n",
+        "      count_upper += 1\n",
+        "print(count_low,\",\",count_upper)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "rSYwEhjEYY8N",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "da0abaf1-2da8-4722-a39c-ee424f632d07"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "13 , 8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5.\tจงเขียนโปรแกรมที่หาตัวเลขระหว่าง 1000 และ 3000 ที่ทุกหลักเป็นเลขคู่ (รวม\n",
+        "\n",
+        "1000 และ 3000) โดยแสดงผลในรูปแบบตัวเลขคั่นด้วย comma\n",
+        "\n",
+        "2000,2002,2004,2006,2008,2020,2022,2024,2026,2028,2040,2042,2044,2046,2048,2060,2062,2064,2066,2068,2080,2082,2084,2086,2088,2200,2202,2204,2206,2208,2220,2222,2224,2226,2228,2240,2242,2244,2246,2248,2260,2262,2264,2266,2268,2280,2282,2284,2286,2288,2400,2402,2404,2406,2408,2420,2422,2424,2426,2428,2440,2442,2444,2446,2448,2460,2462,2464,2466,2468,2480,2482,2484,2486,2488,2600,2602,2604,2606,2608,2620,2622,2624,2626,2628,2640,2642,2644,2646,2648,2660,2662,2664,2666,2668,2680,2682,2684,2686,2688,2800,2802,2804,2806,2808,2820,2822,2824,2826,2828,2840,2842,2844,2846,2848,2860,2862,2864,2866,2868,2880,2882,2884,2886,2888,"
+      ],
+      "metadata": {
+        "id": "lBtvmw_sYYX_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sum = []\n",
+        "for num in range(1000, 3001):\n",
+        "    str_num = str(num)\n",
+        "    even = True\n",
+        "    for digit in str_num:\n",
+        "        if int(digit) % 2 != 0:\n",
+        "            even = False\n",
+        "            break\n",
+        "    if even:\n",
+        "        sum.append(str(num))\n",
+        "for i in sum:\n",
+        "    print(f\"{i},\",end=\"\")"
+      ],
+      "metadata": {
+        "id": "VvChTQMjYqYi",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c97a53b1-5d42-40aa-99f4-9b6c87cf1648"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2000,2002,2004,2006,2008,2020,2022,2024,2026,2028,2040,2042,2044,2046,2048,2060,2062,2064,2066,2068,2080,2082,2084,2086,2088,2200,2202,2204,2206,2208,2220,2222,2224,2226,2228,2240,2242,2244,2246,2248,2260,2262,2264,2266,2268,2280,2282,2284,2286,2288,2400,2402,2404,2406,2408,2420,2422,2424,2426,2428,2440,2442,2444,2446,2448,2460,2462,2464,2466,2468,2480,2482,2484,2486,2488,2600,2602,2604,2606,2608,2620,2622,2624,2626,2628,2640,2642,2644,2646,2648,2660,2662,2664,2666,2668,2680,2682,2684,2686,2688,2800,2802,2804,2806,2808,2820,2822,2824,2826,2828,2840,2842,2844,2846,2848,2860,2862,2864,2866,2868,2880,2882,2884,2886,2888,"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6.\tในคณิตศาสตร์ ตัวหารร่วมมาก หรือ ห.ร.ม. (greatest common divisor: gcd) ของจำนวนเต็มสองจำนวนซึ่งไม่เป็นศูนย์พร้อมกัน คือจำนวนเต็มที่มากที่สุดที่หารทั้งสองจำนวนลงตัว\n",
+        "จงหา ห.ร.ม. ของจำนวนเต็ม 2 จำนวนที่กำหนดให้\n",
+        "ข้อมูลนำเข้า\n",
+        "บรรทัดแรกเพียงบรรทัดเดียว ประกอบไปด้วยจำนวนเต็มบวกสองจำนวน a และ b มีค่าไม่เกิน 9999\n",
+        "ข้อมูลส่งออก\n",
+        "ในบรรทัดแรกของข้อมูลส่งออก ให้แสดงค่า ห.ร.ม. ของ a และ b\n",
+        "เช่น \tInput : 12 14\t\tOutput : 2\n",
+        "\tInput : 7 3\t\tOutput : 1\n",
+        "\n",
+        "678\n",
+        "345\n",
+        "=> 3"
+      ],
+      "metadata": {
+        "id": "6TCedRC8YqyU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    a, b = input(\"Input 2 number : \").split()\n",
+        "    a = int(a)\n",
+        "    b = int(b)\n",
+        "\n",
+        "    if 0 <= a <= 9999 and 0 <= b <= 9999:\n",
+        "        break\n",
+        "    else:\n",
+        "        print(\"Invalid input. Please enter numbers between 0 and 9999.\")\n",
+        "\n",
+        "min_num = min(a, b)\n",
+        "\n",
+        "hcf = 1\n",
+        "\n",
+        "for i in range(1, min_num + 1):\n",
+        "     if a % i == 0 and b % i == 0:\n",
+        "\n",
+        "         hcf = i\n",
+        "\n",
+        "print(hcf)\n"
+      ],
+      "metadata": {
+        "id": "yrD4p2Q6Y6qr",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e2917037-d48e-47bc-b0e9-21e8d70787d5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Input 2 number : 678 345\n",
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7.\tจงเขียนโปรแกรมที่คำนวณค่าของ a+aa+aaa+aaaa เมื่อรับข้อมูลเป็นตัวเลข 1 หลัก\n",
+        "\n",
+        "Input : 9\n",
+        "\n",
+        "Output : 11106 (=9+99+999+9999)\n"
+      ],
+      "metadata": {
+        "id": "DW9riUdiY7KK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = str(10)\n",
+        "if int(x) > 9 or int(x) < 0:\n",
+        "  print(\"Error\")\n",
+        "else:\n",
+        "  y = (int(x) + int(x*2) + int(x*3) + int(x*4))\n",
+        "  print (f\"{y}(={x} + {str(x)*2} + {str(x)*3}+ {str(x)*4})\")\n"
+      ],
+      "metadata": {
+        "id": "WzHRIRGwtNid",
+        "outputId": "f9a91b75-6f54-4205-afdf-36662ef4152c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Error\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8.\tแปลงเลขโรมัน เป็นเลขอารบิก เช่น MMMDCCXXIV = 3724 (ค้นหาวิธีทางทางอินเตอร์เน็ต)\n"
+      ],
+      "metadata": {
+        "id": "G3jPCyruZAZY"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "ZAu9AxyfsqIM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = \"MMMDCCXXIV\"\n",
+        "sum = 0\n",
+        "value = 0\n",
+        "count = 0\n",
+        "for i in range(len(num)):\n",
+        "    if num[i] == 'I':\n",
+        "        value = 1\n",
+        "    if num[i] == 'V':\n",
+        "        value = 5\n",
+        "    if num[i] == 'X':\n",
+        "        value = 10\n",
+        "    if num[i] == 'C':\n",
+        "        value = 100\n",
+        "    if num[i] == 'D':\n",
+        "        value = 500\n",
+        "    if num[i] == 'M':\n",
+        "        value = 1000\n",
+        "    if count < value:\n",
+        "        sum += value - (count * 2)\n",
+        "    else:\n",
+        "        sum += value\n",
+        "    count = value\n",
+        "print(sum)"
+      ],
+      "metadata": {
+        "id": "iAZlPfC4Y-GG",
+        "outputId": "6b5e987c-b2c2-434b-b258-6a40d8da09c0",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3724\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9.\tอนุกรม Fibonacci คือ อนุกรมที่ตัวที่ 3 เป็นต้นไปเกิดจาก 2 ตัวหน้าบวกกัน จงเขียนโปรแกรมแสดงอนุกรม\n",
+        "เช่น ตั้งแต่ 0-1000 คือ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987\n"
+      ],
+      "metadata": {
+        "id": "SJBVkaFHZHKe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = int(input(\"Enter terms : \"))\n",
+        "n1 = 0\n",
+        "n2 = 1\n",
+        "sum = 0\n",
+        "for i in range(num):\n",
+        "  if n1 <= num:\n",
+        "    print(n1)\n",
+        "    sum = n1 + n2\n",
+        "    n1 = n2\n",
+        "    n2 = sum"
+      ],
+      "metadata": {
+        "id": "Vdtc9KqSZLls",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1d2010d0-b87a-477c-a7fd-dce79dc1c9e8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter terms : 1000\n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "5\n",
+            "8\n",
+            "13\n",
+            "21\n",
+            "34\n",
+            "55\n",
+            "89\n",
+            "144\n",
+            "233\n",
+            "377\n",
+            "610\n",
+            "987\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10.\tให้สร้างโปรแกรม True Love โดยรับชื่อภาษาอังกฤษของ 2 คน จากนั้นค้นหาว่ามีตัวอักษรอยู่ในคำว่า True และ Love รวมกันกี่ตัว จากนั้นนำมาต่อกันเป็น % ตามรูป (ไม่ต้องแสดงเครื่องหมาย %)"
+      ],
+      "metadata": {
+        "id": "1ykDG1H4ZKd4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name1 = str(input(\"Name1 : \"))\n",
+        "name2 = str(input(\"Name2 : \"))\n",
+        "sum_name = name1 + name2\n",
+        "sum_name = sum_name.lower()\n",
+        "txt_true = \"tru\"\n",
+        "txt_love = \"lov\"\n",
+        "sum_true = 0\n",
+        "sum_love = 0\n",
+        "for i in sum_name:\n",
+        "    if i in txt_true:\n",
+        "        sum_true += 1\n",
+        "    if i in txt_love:\n",
+        "        sum_love += 1\n",
+        "    if i == \"e\":\n",
+        "        sum_true += 1\n",
+        "        sum_love +=1\n",
+        "print(f\"{sum_true}{sum_love}\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "syOZPpj2ZPaA",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3ee8c8e7-c1b7-498b-f0ae-a9c60246debd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name1 : Krytie Lee Yandoli\n",
+            "Name2 : Aubrey Drake Graham\n",
+            "118\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
