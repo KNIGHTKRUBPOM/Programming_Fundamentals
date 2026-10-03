@@ -47,6 +47,14 @@ Focus on 2D coordinates, board representations, and grid searching.
 ### 6. `final_exam/`
 - `prime_factor_search.py`: Prime number sieve generator and target product factor search.
 
+### 7. `jupyter_notebooks/`
+Interactive laboratory notebooks (`.ipynb`) covering foundational programming exercises:
+- `Lab_3.ipynb`: Conditionals & Expressions
+- `Lab_4.ipynb`: Loops & Pattern Generation
+- `Lab_5.ipynb`: Functions & Modular Programming
+- `Lab_6.ipynb`: String & List Operations
+- `Lab_7.ipynb`: Dictionaries & Sets
+
 ---
 
 ## 🧪 Testing All Lab Exercises

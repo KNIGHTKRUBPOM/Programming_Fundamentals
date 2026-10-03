@@ -121,7 +121,8 @@ Structured laboratory modules covering core computer science principles:
     ├── lab_06_1_data_structures/
     ├── lab_07_dictionaries/
     ├── lab_08_matrix_and_grids/
-    └── final_exam/
+    ├── final_exam/
+    └── jupyter_notebooks/
 ```
 
 ---
