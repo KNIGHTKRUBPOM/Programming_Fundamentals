@@ -139,8 +139,8 @@ Structured laboratory modules covering core computer science principles:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/KNIGHTKRUBPOM/Programming_Fundamentals.git
+cd Programming_Fundamentals
 ```
 
 ### 2. Set up virtual environment
