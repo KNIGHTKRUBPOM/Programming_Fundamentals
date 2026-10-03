@@ -180,7 +180,7 @@ pip install -r requirements.txt
 
 **Athichanan**  
 - GitHub: [@KNIGHTKRUBPOM](https://github.com/KNIGHTKRUBPOM)  
-- Email: your.email@example.com  
+- Email: Athichanan2547@gmail.com
 
 
 ---
